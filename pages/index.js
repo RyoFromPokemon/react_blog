@@ -5,12 +5,14 @@ import Link from 'next/link';
 export default function Home({ blog }) {
   return (
     <div>
+      <h1>Onasu Blog</h1>
       <ul>
         {blog.map(blog => (
           <li key={blog.id}>
             <Link href={`blog/${blog.id}`}>
               <a>{blog.title}</a>
             </Link>
+              <br></br><img src={blog.image && `${blog.image.url}`}></img>
           </li>
         ))}
       </ul>
